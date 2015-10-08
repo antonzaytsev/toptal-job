@@ -15,9 +15,9 @@ class UserPolicy < ApplicationPolicy
     record.id == user.id || user.role.in?(%w(manager admin))
   end
 
-  # def destroy?
-  #   record.id == user.id || user.role.in?(%w(manager admin))
-  # end
+  def destroy?
+    user.role.in?(%w(manager admin))
+  end
 
   class Scope < ApplicationPolicy::Scope
     def resolve

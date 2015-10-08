@@ -54,6 +54,17 @@ class Api::UsersController < Api::BaseController
     )
   end
 
+  def destroy
+    user = User.find(params[:id])
+    authorize user
+
+    unless user.destroy
+      return api_error(status: 500)
+    end
+
+    head status: 204
+  end
+
   private
 
   def create_params

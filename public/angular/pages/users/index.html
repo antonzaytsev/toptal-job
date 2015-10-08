@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="user in users">
+    <tr>
+      <td>{{user.email}}</td>
+      <td>
+        <a href="#/users/{{user.id}}/edit" class="btn btn-default btn-xs">Edit</a>
+        <a ng-click="deleteUser(user.id)" class="btn btn-default btn-xs">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

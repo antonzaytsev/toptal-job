@@ -3,8 +3,8 @@
   <div class="loginmodal-container">
     <h1>Login to Your Account</h1><br>
     <form ng-submit="loginProcess()">
-      <input type="text" name="user[email]" placeholder="Email" ng-model="email" required>
-      <input type="password" name="user[password]" placeholder="Password" ng-model="password" required>
+      <input type="text" name="user[email]" placeholder="Email" ng-model="user.email" required>
+      <input type="password" name="user[password]" placeholder="Password" ng-model="user.password" required>
       <input type="submit" class="login loginmodal-submit" value="Login">
     </form>
 
