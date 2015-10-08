@@ -1,6 +1,6 @@
 class Api::SessionSerializer < Api::BaseSerializer
 
-  attributes :id, :email, :token
+  attributes :email, :token
 
   def token
     object.authentication_token
