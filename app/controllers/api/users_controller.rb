@@ -9,8 +9,7 @@ class Api::UsersController < Api::BaseController
 
     render json: ActiveModel::ArraySerializer.new(
         users,
-        each_serializer: Api::UserSerializer,
-        root: 'users',
+        each_serializer: Api::UserSerializer
       )
   end
 

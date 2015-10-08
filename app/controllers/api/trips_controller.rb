@@ -16,8 +16,7 @@ class Api::TripsController < Api::BaseController
 
     render json: ActiveModel::ArraySerializer.new(
         trips,
-        each_serializer: Api::TripSerializer,
-        root: 'trips',
+        each_serializer: Api::TripSerializer
       )
   end
 
