@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div class="loginmodal-container">
+    <h1>Create Account</h1><br>
+    <form ng-submit="registerProcess()">
+      <input type="text" name="user[email]" placeholder="Email" ng-model="email" required>
+      <input type="password" name="user[password]" placeholder="Password" ng-model="password" required>
+      <input type="submit" class="login loginmodal-submit" value="Register">
+    </form>
+
+    <div class="login-help">
+      Already have account? <a href="#login">Login</a>
+    </div>
+  </div>
+
+</div>

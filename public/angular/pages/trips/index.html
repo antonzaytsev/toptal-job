@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="btn-group">
+        <div class="btn btn-default" ng-click="setFilter('upcoming')">Upcoming</div>
+        <div class="btn btn-default" ng-click="setFilter('past')">Past</div>
+        <div class="btn btn-default" ng-click="setFilter('all')">All</div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <input type="text" placeholder="Search trip by destination" ng-model="searchTripDestination" class="form-control">
+    </div>
+    <div class="col-sm-6">
+      <a href="#/trips/new" class="btn btn-success pull-right">Add trip</a>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Destination</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Days to trip</th>
+      <th>Comment</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="trip in trips | filter: tripsFilter | filter: searchTripDestination">
+    <tr>
+      <td>{{trip.destination}}</td>
+      <td>{{trip.start_date}}</td>
+      <td>{{trip.end_date}}</td>
+      <td>{{trip.days_to_trip}}</td>
+      <td>{{trip.comment}}</td>
+      <td class="text-right">
+        <a class="btn btn-default btn-xs" href="#/trips/{{trip.id}}/edit">edit</a>
+        <a class="btn btn-default btn-xs" ng-click="deleteTrip(trip.id)">delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

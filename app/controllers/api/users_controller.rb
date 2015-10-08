@@ -27,8 +27,11 @@ class Api::UsersController < Api::BaseController
 
     user.save!
 
+    serializer = Api::UserSerializer.new(user)
+    serializer.class._attributes << :token
+
     render(
-      json: Api::UserSerializer.new(user).to_json,
+      json: serializer.to_json,
       status: 201,
       # location: api_user_path(user.id)
     )

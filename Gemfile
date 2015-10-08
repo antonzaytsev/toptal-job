@@ -16,9 +16,9 @@ end
 
 gem 'pg'
 gem 'pry-rails'
-gem 'api_auth'
 gem 'thin'
 gem 'pundit'
 gem 'kaminari'
 gem 'active_model_serializers', '~> 0.9.2'
 gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors'

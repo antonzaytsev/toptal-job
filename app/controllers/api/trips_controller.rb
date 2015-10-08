@@ -1,7 +1,18 @@
 class Api::TripsController < Api::BaseController
   def index
-    trips = Trip.all
+    trips = Trip.all.order(start_date: :asc)
     trips = policy_scope(trips)
+
+    # if params[:filter] && params[:filter].in?(%w(upcoming past all))
+    #   case params[:filter]
+    #     when 'upcoming'
+    #       trips = trips.upcoming
+    #     when 'past'
+    #       trips = trips.past
+    #     else
+    #       trips = trips.all
+    #   end
+    # end
 
     render json: ActiveModel::ArraySerializer.new(
         trips,
