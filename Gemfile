@@ -8,9 +8,6 @@ gem 'rails-api'
 
 group :development do
   gem 'spring'
-  gem 'quiet_assets'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :test, :development do
@@ -18,6 +15,10 @@ group :test, :development do
 end
 
 gem 'pg'
-gem 'devise'
 gem 'pry-rails'
+gem 'api_auth'
 gem 'thin'
+gem 'pundit'
+gem 'kaminari'
+gem 'active_model_serializers', '~> 0.9.2'
+gem 'bcrypt', '~> 3.1.7'
