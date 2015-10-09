@@ -68,7 +68,7 @@ class Api::UsersController < Api::BaseController
 
   def create_params
     params.require(:user).permit(
-      :email, :password
+      :email, :password, :role
     ).delete_if{ |k,v| v.nil?}
   end
 
