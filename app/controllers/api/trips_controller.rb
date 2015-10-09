@@ -35,8 +35,7 @@ class Api::TripsController < Api::BaseController
 
     render(
       json: Api::TripSerializer.new(trip).to_json,
-      status: 201,
-      # location: api_trip_path(trip.id)
+      status: 201
     )
   end
 
@@ -52,13 +51,12 @@ class Api::TripsController < Api::BaseController
 
     render(
       json: Api::TripSerializer.new(trip).to_json,
-      status: 201,
-      # location: api_trip_path(trip.id)
+      status: 201
     )
   end
 
   def destroy
-    trip = Trip.where(author: current_user.id).find(params[:id])
+    trip = Trip.find(params[:id])
     authorize trip
 
     unless trip.destroy

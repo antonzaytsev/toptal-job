@@ -6,7 +6,7 @@ RSpec.describe "Sessions", type: :request do
       user = FactoryGirl.create :user
       post api_sessions_path, {user: {email: user.email, password: user.password}}
       expect(response).to have_http_status(201)
-      expect(JSON.parse(response.body).keys).to eq ['email', 'token']
+      expect(JSON.parse(response.body).keys).to eq ['email', 'token', 'role']
     end
   end
 end
