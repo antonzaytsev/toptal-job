@@ -31,8 +31,7 @@ class Api::UsersController < Api::BaseController
 
     render(
       json: serializer.to_json,
-      status: 201,
-      # location: api_user_path(user.id)
+      status: 201
     )
   end
 
@@ -48,8 +47,7 @@ class Api::UsersController < Api::BaseController
 
     render(
       json: Api::UserSerializer.new(user).to_json,
-      status: 201,
-      # location: api_user_path(user.id)
+      status: 201
     )
   end
 
